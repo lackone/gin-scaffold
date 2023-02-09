@@ -1,0 +1,17 @@
+#driver: console
+#formatter: text
+#level: trace
+
+#driver: single
+#level: trace
+#folder: /tmp/
+#file: app.log
+
+driver: rotate # 切割日志
+level: trace # 日志级别
+#file: app.log # 保存的日志文件
+rotate_count: 10  # 保留旧文件的最大个数
+rotate_size: 1 # 日志文件的最大大小(MB为单位)
+#rotate_time: "1m"
+max_age: 10 # 保留旧文件的最大天数
+date_format: "%Y-%m-%d-%H-%M" # 文件后缀格式
