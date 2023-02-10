@@ -29,5 +29,9 @@ type App interface {
 
 	AppFolder() string //AppFolder定义业务代码所在的目录，用于监控文件变更使用
 
+	DocsFolder() string //文档目录
+
+	RoutesFolder() string //路由目录
+
 	LoadAppConfig(configs map[string]string) //加载新的APP配置
 }

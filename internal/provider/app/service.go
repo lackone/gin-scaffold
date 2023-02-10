@@ -135,6 +135,22 @@ func (app *App) AppFolder() string {
 	return filepath.Join(app.BaseFolder(), "app")
 }
 
+func (app *App) DocsFolder() string {
+	folder := app.getConfigBySequence("docs_folder", "DOCS_FOLDER", "app.path.docs_folder")
+	if folder != "" {
+		return folder
+	}
+	return filepath.Join(app.BaseFolder(), "docs")
+}
+
+func (app *App) RoutesFolder() string {
+	folder := app.getConfigBySequence("routes_folder", "ROUTES_FOLDER", "app.path.routes_folder")
+	if folder != "" {
+		return folder
+	}
+	return filepath.Join(app.BaseFolder(), "routes")
+}
+
 func NewApp(params ...interface{}) (interface{}, error) {
 	if len(params) != 2 {
 		return nil, errors.New("NewApp params error")

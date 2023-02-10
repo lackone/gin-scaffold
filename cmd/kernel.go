@@ -11,4 +11,8 @@ func AddKernelCommands(rootCmd *core.Command) {
 	rootCmd.AddCommand(initCronCommand())
 	//挂载config命令
 	rootCmd.AddCommand(initConfigCommand())
+	//挂载env命令
+	rootCmd.AddCommand(initEnvCommand())
+	//挂载swag命令
+	rootCmd.AddCommand(initSwaggerCommand())
 }
