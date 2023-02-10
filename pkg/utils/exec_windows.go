@@ -9,7 +9,7 @@ import (
 func GetExecDirectory() string {
 	file, err := os.Getwd()
 	if err == nil {
-		return file + "/"
+		return file + string(os.PathSeparator)
 	}
 	return ""
 }

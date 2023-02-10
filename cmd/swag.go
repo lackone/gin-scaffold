@@ -33,7 +33,7 @@ var swaggerGenCommand = &cobra.Command{
 		appService := container.MustMake(contract.AppKey).(contract.App)
 
 		outputDir := filepath.Join(appService.DocsFolder(), "swagger")
-		baseFolder := filepath.Join(appService.AppFolder(), "http")
+		baseFolder := appService.BaseFolder()
 
 		conf := &gen.Config{
 			// 遍历需要查询注释的目录
@@ -41,9 +41,10 @@ var swaggerGenCommand = &cobra.Command{
 			// 不包含哪些文件
 			Excludes: "",
 			// 输出目录
-			OutputDir: outputDir,
+			OutputDir:   outputDir,
+			OutputTypes: []string{"go", "yaml", "json"},
 			// 整个swagger接口的说明文档注释
-			MainAPIFile: "swagger.go",
+			MainAPIFile: "main.go",
 			// 名字的显示策略，比如首字母大写等
 			PropNamingStrategy: "",
 			// 是否要解析vendor目录
@@ -56,6 +57,8 @@ var swaggerGenCommand = &cobra.Command{
 			MarkdownFilesDir: "",
 			// 是否应该在docs.go中生成时间戳
 			GeneratedTime: false,
+			ParseGoList:   true,
+			ParseDepth:    100,
 		}
 		err := gen.New().Build(conf)
 		if err != nil {

@@ -19,6 +19,9 @@ require (
 	github.com/spf13/cast v1.5.0
 	github.com/spf13/cobra v1.6.1
 	github.com/spf13/viper v1.15.0
+	github.com/swaggo/files v1.0.0
+	github.com/swaggo/gin-swagger v1.5.3
+	github.com/swaggo/swag v1.8.10
 	gorm.io/driver/clickhouse v0.5.0
 	gorm.io/driver/mysql v1.4.6
 	gorm.io/driver/postgres v1.4.7
@@ -31,11 +34,10 @@ require (
 	github.com/ClickHouse/ch-go v0.52.0 // indirect
 	github.com/ClickHouse/clickhouse-go/v2 v2.6.0 // indirect
 	github.com/KyleBanks/depth v1.2.1 // indirect
-	github.com/PuerkitoBio/purell v1.2.0 // indirect
-	github.com/PuerkitoBio/urlesc v0.0.0-20170810143723-de5bf2ad4578 // indirect
 	github.com/andybalholm/brotli v1.0.4 // indirect
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
+	github.com/ghodss/yaml v1.0.0 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-faster/city v1.0.1 // indirect
 	github.com/go-faster/errors v0.6.1 // indirect
@@ -81,9 +83,6 @@ require (
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/subosito/gotenv v1.4.2 // indirect
-	github.com/swaggo/files v1.0.0 // indirect
-	github.com/swaggo/gin-swagger v1.5.3 // indirect
-	github.com/swaggo/swag v1.8.10 // indirect
 	github.com/ugorji/go/codec v1.2.9 // indirect
 	go.opentelemetry.io/otel v1.13.0 // indirect
 	go.opentelemetry.io/otel/trace v1.13.0 // indirect

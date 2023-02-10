@@ -1,0 +1,53 @@
+info:
+  contact: {}
+  description: gin脚手架
+  termsOfService: https://github.com/lackone/gin-scaffold
+  title: gin脚手架
+  version: "1.0"
+paths:
+  /test_orm:
+    get:
+      consumes:
+      - application/json
+      description: 测试orm
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: 测试orm
+      tags:
+      - TestORM
+  /test_swag:
+    get:
+      consumes:
+      - application/json
+      description: 测试swag
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: 测试swag
+      tags:
+      - TestSwag
+  /test_swag2:
+    get:
+      consumes:
+      - application/json
+      description: 测试swag2
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: 测试swag2
+      tags:
+      - TestSwag2
+swagger: "2.0"

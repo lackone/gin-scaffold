@@ -15,6 +15,10 @@ import (
 	"github.com/lackone/gin-scaffold/internal/provider/redis"
 )
 
+// @title gin脚手架
+// @version 1.0
+// @description gin脚手架
+// @termsOfService https://github.com/lackone/gin-scaffold
 func main() {
 	//初始化服务容器
 	container := core.NewContainer()

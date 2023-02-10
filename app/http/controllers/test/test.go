@@ -11,6 +11,41 @@ import (
 type Test struct {
 }
 
+// TestSwag godoc
+// @Summary 测试swag
+// @Schemes
+// @Description 测试swag
+// @Tags TestSwag
+// @Accept json
+// @Produce json
+// @Success 200 {string} ok
+// @Router /test_swag [get]
+func (t *Test) TestSwag(c *gin.Context) {
+	c.JSON(200, "ok")
+}
+
+// TestSwag2 godoc
+// @Summary 测试swag2
+// @Schemes
+// @Description 测试swag2
+// @Tags TestSwag2
+// @Accept json
+// @Produce json
+// @Success 200 {string} ok
+// @Router /test_swag2 [get]
+func (t *Test) TestSwag2(c *gin.Context) {
+	c.JSON(200, "ok")
+}
+
+// TestORM godoc
+// @Summary 测试orm
+// @Schemes
+// @Description 测试orm
+// @Tags TestORM
+// @Accept json
+// @Produce json
+// @Success 200 {string} ok
+// @Router /test_orm [get]
 func (t *Test) TestORM(c *gin.Context) {
 	container := global.Engine.GetContainer()
 	log := container.MustMake(contract.LogKey).(contract.Log)
