@@ -1,4 +1,13 @@
 swagger: true
+default_page_size: 10
+max_page_size: 100
+upload_save_path: storage/uploads
+upload_server_url: http://127.0.0.1:8080/uploads
+upload_image_max_size: 5 #MB
+upload_image_allow_ext:
+  - .jpg
+  - .jpeg
+  - .png
 
 path:
 #  log_folder: "/home/xxx/log/"

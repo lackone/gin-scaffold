@@ -4,7 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/lackone/gin-scaffold/app/models"
 	"github.com/lackone/gin-scaffold/internal/contract"
-	"github.com/lackone/gin-scaffold/internal/global"
+	"github.com/lackone/gin-scaffold/internal/core"
 	"github.com/lackone/gin-scaffold/internal/provider/gorm"
 )
 
@@ -47,7 +47,8 @@ func (t *Test) TestSwag2(c *gin.Context) {
 // @Success 200 {string} ok
 // @Router /test_orm [get]
 func (t *Test) TestORM(c *gin.Context) {
-	container := global.Engine.GetContainer()
+	engine := c.MustGet("engine").(*core.Engine)
+	container := engine.GetContainer()
 	log := container.MustMake(contract.LogKey).(contract.Log)
 	orm := container.MustMake(contract.GORMKey).(contract.IGORM)
 	db, err := orm.GetDB(gorm.WithConfigPath("database.default"))

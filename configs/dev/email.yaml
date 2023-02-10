@@ -1,0 +1,8 @@
+host: smtp.126.com
+port: 465
+username: lackone@126.com
+password: HLVCSEKFEYAARWKW
+isssl: true
+from: lackone@126.com
+to:
+  - 805899763@qq.com

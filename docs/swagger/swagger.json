@@ -1,81 +1,81 @@
 {
-    "swagger": "2.0",
-    "info": {
-        "description": "gin脚手架",
-        "title": "gin脚手架",
-        "termsOfService": "https://github.com/lackone/gin-scaffold",
-        "contact": {},
-        "version": "1.0"
-    },
-    "paths": {
-        "/test_orm": {
-            "get": {
-                "description": "测试orm",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "TestORM"
-                ],
-                "summary": "测试orm",
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                }
+  "swagger": "2.0",
+  "info": {
+    "description": "gin脚手架",
+    "title": "gin脚手架",
+    "termsOfService": "https://github.com/lackone/gin-scaffold",
+    "contact": {},
+    "version": "1.0"
+  },
+  "paths": {
+    "/test_orm": {
+      "get": {
+        "description": "测试orm",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "TestORM"
+        ],
+        "summary": "测试orm",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "string"
             }
-        },
-        "/test_swag": {
-            "get": {
-                "description": "测试swag",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "TestSwag"
-                ],
-                "summary": "测试swag",
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "/test_swag2": {
-            "get": {
-                "description": "测试swag2",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "TestSwag2"
-                ],
-                "summary": "测试swag2",
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
+          }
         }
+      }
+    },
+    "/test_swag": {
+      "get": {
+        "description": "测试swag",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "TestSwag"
+        ],
+        "summary": "测试swag",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/test_swag2": {
+      "get": {
+        "description": "测试swag2",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "TestSwag2"
+        ],
+        "summary": "测试swag2",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
     }
+  }
 }

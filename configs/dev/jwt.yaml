@@ -1,0 +1,3 @@
+secret: 123456
+issuer: gin-scaffold
+expire: 7200
