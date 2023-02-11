@@ -37,6 +37,8 @@ func (l *LogProvider) Register(c core.IContainer) core.NewInstance {
 		return services.NewConsoleLog
 	case "custom":
 		return services.NewCustomLog
+	case "zap":
+		return services.NewZapLog
 	default:
 		return services.NewConsoleLog
 	}

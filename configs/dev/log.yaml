@@ -7,7 +7,7 @@
 #folder: /tmp/
 #file: app.log
 
-driver: rotate # 切割日志
+driver: zap # 切割日志
 level: trace # 日志级别
 #file: app.log # 保存的日志文件
 rotate_count: 10  # 保留旧文件的最大个数
