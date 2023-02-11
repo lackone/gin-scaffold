@@ -85,7 +85,11 @@ func (c *Config) loadConfigFile(folder string, fileName string) error {
 		c.viper[name] = v
 	}
 
-	c.viper[name].ReadConfig(bytes.NewReader(data))
+	err = c.viper[name].ReadConfig(bytes.NewReader(data))
+	if err != nil {
+		fmt.Println(err)
+		return err
+	}
 
 	if name == "app" && c.c.IsBind(contract.AppKey) {
 		appService := c.c.MustMake(contract.AppKey).(contract.App)

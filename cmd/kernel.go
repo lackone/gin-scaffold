@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"github.com/lackone/gin-scaffold/cmd/model"
 	"github.com/lackone/gin-scaffold/internal/core"
 )
 
@@ -15,4 +16,6 @@ func AddKernelCommands(rootCmd *core.Command) {
 	rootCmd.AddCommand(initEnvCommand())
 	//挂载swag命令
 	rootCmd.AddCommand(initSwaggerCommand())
+	//挂载model命令
+	rootCmd.AddCommand(model.InitModelCommand())
 }

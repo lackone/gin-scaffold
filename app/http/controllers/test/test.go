@@ -65,7 +65,7 @@ func (t *Test) TestORM(c *gin.Context) {
 	u := &models.User{Name: "test", Pwd: "test"}
 	err = db.Create(u).Error
 	log.Info(c, "insert user", map[string]interface{}{
-		"id":  u.Id,
+		"id":  u.ID,
 		"err": err,
 	})
 	db.Create(&models.User{Name: "aaa", Pwd: "aaa"})
@@ -76,23 +76,23 @@ func (t *Test) TestORM(c *gin.Context) {
 	u.Name = "aaa"
 	err = db.Save(u).Error
 	log.Info(c, "update user", map[string]interface{}{
-		"id":  u.Id,
+		"id":  u.ID,
 		"err": err,
 	})
 
 	//查询数据
-	q := &models.User{Id: 2}
+	q := &models.User{ID: 2}
 	err = db.First(q).Error
 	log.Info(c, "query user", map[string]interface{}{
-		"id":  q.Id,
+		"id":  q.ID,
 		"err": err,
 	})
 
 	//删除数据
-	d := &models.User{Id: 3}
+	d := &models.User{ID: 3}
 	err = db.Delete(d).Error
 	log.Info(c, "delete user", map[string]interface{}{
-		"id":  d.Id,
+		"id":  d.ID,
 		"err": err,
 	})
 
