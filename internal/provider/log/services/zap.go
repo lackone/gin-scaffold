@@ -81,7 +81,10 @@ func NewZapLog(params ...interface{}) (interface{}, error) {
 
 	writeSyncer := zapcore.AddSync(w)
 	zapLevel := ConvertZapLevel(level)
-	zl := zap.New(zapcore.NewCore(encoder, writeSyncer, zapLevel), zap.AddCaller(), zap.AddCallerSkip(1), zap.AddStacktrace(zapcore.WarnLevel))
+	var stackTraceLevel zap.LevelEnablerFunc = func(level zapcore.Level) bool {
+		return level >= zapcore.DPanicLevel
+	}
+	zl := zap.New(zapcore.NewCore(encoder, writeSyncer, zapLevel), zap.AddCaller(), zap.AddCallerSkip(1), zap.AddStacktrace(stackTraceLevel))
 	zap.ReplaceGlobals(zl)
 
 	log := &ZapLog{
@@ -139,7 +142,7 @@ func (l *ZapLog) Debug(ctx context.Context, msg string, fields map[string]interf
 func (l *ZapLog) Trace(ctx context.Context, msg string, fields map[string]interface{}) {
 	fs := l.ConvertZapFields(ctx, fields)
 
-	l.Logger.WithOptions(zap.AddStacktrace(zapcore.InfoLevel)).Info(msg, fs...)
+	l.Logger.Debug(msg, fs...)
 }
 
 func (l *ZapLog) ConvertZapFields(ctx context.Context, fields map[string]interface{}) []zap.Field {
@@ -194,7 +197,7 @@ func ConvertZapLevel(level contract.LogLevel) *zapcore.Level {
 	case contract.DebugLevel:
 		l = zapcore.DebugLevel
 	case contract.TraceLevel:
-		l = zapcore.InfoLevel
+		l = zapcore.DebugLevel
 	}
 	return &l
 }
