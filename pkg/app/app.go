@@ -11,9 +11,9 @@ type Response struct {
 }
 
 type Return struct {
-	code int         `json:"code"` //状态码
-	msg  string      `json:"msg"`  //消息
-	data interface{} `json:"data"` //数据
+	Code int         `json:"code"` //状态码
+	Msg  string      `json:"msg"`  //消息
+	Data interface{} `json:"data"` //数据
 }
 
 type Pager struct {
@@ -33,9 +33,9 @@ func (r *Response) ToSuccess(data interface{}) {
 		data = gin.H{}
 	}
 	r.Ctx.JSON(http.StatusOK, Return{
-		code: http.StatusOK,
-		msg:  "success",
-		data: data,
+		Code: http.StatusOK,
+		Msg:  "success",
+		Data: data,
 	})
 }
 
@@ -44,9 +44,9 @@ func (r *Response) ToList(list interface{}, totalRows int) {
 		list = gin.H{}
 	}
 	r.Ctx.JSON(http.StatusOK, Return{
-		code: http.StatusOK,
-		msg:  "success",
-		data: gin.H{
+		Code: http.StatusOK,
+		Msg:  "success",
+		Data: gin.H{
 			"list": list,
 			"pager": Pager{
 				Page:      GetPage(r.Ctx),
@@ -59,8 +59,8 @@ func (r *Response) ToList(list interface{}, totalRows int) {
 
 func (r *Response) ToError(err *errcode.Error) {
 	r.Ctx.JSON(err.Code(), Return{
-		code: err.Code(),
-		msg:  err.Msg(),
-		data: err.Details(),
+		Code: err.Code(),
+		Msg:  err.Msg(),
+		Data: err.Details(),
 	})
 }
