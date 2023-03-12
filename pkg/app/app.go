@@ -58,7 +58,7 @@ func (r *Response) ToList(list interface{}, totalRows int) {
 }
 
 func (r *Response) ToError(err *errcode.Error) {
-	r.Ctx.JSON(err.Code(), Return{
+	r.Ctx.JSON(err.StatusCode(), Return{
 		Code: err.Code(),
 		Msg:  err.Msg(),
 		Data: err.Details(),
